@@ -1,7 +1,14 @@
 import React from 'react';
 
+import './App.scss';
+
 const App = () => {
-    return <div className='App' />;
+    return (
+        <React.Fragment>
+            <div className='top' />
+            <div className='form' />
+        </React.Fragment>
+    );
 };
 
 export default App;

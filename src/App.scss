@@ -1,0 +1,16 @@
+@import './style/color.scss';
+
+.top {
+    height: 40vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('/images/back.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.form {
+    height: 5vh; // delete later
+    // padding: 1.4rem;
+    border-bottom: 1px solid $color-grey-border;
+    background-color: $color-grey-background;
+}
