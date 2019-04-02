@@ -6,6 +6,11 @@
         url('/images/back.png');
     background-size: cover;
     background-position: center;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form {
