@@ -2,8 +2,7 @@ import React from 'react';
 
 import BudgetView from './BudgetView/BudgetView';
 import BudgetPanel from './BudgetPanel/BudgetPanel';
-import { calcPercentage } from '../shared/utilities';
-import './BudgetDisplay.scss';
+import { calcPercentage } from '../shared/helpers';
 
 type BudgetDisplay = {
     budget: number;
@@ -12,11 +11,9 @@ type BudgetDisplay = {
 };
 
 const BudgetDisplay = (props: BudgetDisplay) => {
-    const budgetCategory = props.budget >= 0 ? 'income' : 'expenses';
-
     return (
-        <div className='BudgetDisplay'>
-            <BudgetView month='September' value={props.budget} />
+        <div>
+            <BudgetView value={props.budget} />
             <BudgetPanel
                 category='income'
                 value={props.totalIncome}

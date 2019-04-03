@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { formatNumber } from '../../shared/utilities';
+import { formatNumber } from '../../shared/helpers';
 import './BudgetPanel.scss';
 
 type BudgetPanel = {

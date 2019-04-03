@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 import BudgetDisplay from './BudgetDisplay/BudgetDisplay';
+import EntryForm from './EntryForm/EntryForm';
 import './App.scss';
 
 const App = () => {
     const [budget, setBudget] = useState(0);
-    const [totalIncome, setTotalIncome] = useState(5111);
+    const [totalIncome, setTotalIncome] = useState(5111.8);
     const [totalExpenses, setTotalExpenses] = useState(654);
 
     useEffect(() => {
@@ -21,7 +22,9 @@ const App = () => {
                     totalExpenses={totalExpenses}
                 />
             </div>
-            <div className='form' />
+            <div className='form'>
+                <EntryForm />
+            </div>
         </React.Fragment>
     );
 };
