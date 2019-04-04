@@ -4,13 +4,13 @@ import BudgetView from './BudgetView/BudgetView';
 import BudgetPanel from './BudgetPanel/BudgetPanel';
 import { calcPercentage } from '../shared/helpers';
 
-type BudgetDisplay = {
+type BudgetDisplayProps = {
     budget: number;
     totalIncome: number;
-    totalExpenses: number;
+    totalExpense: number;
 };
 
-const BudgetDisplay = (props: BudgetDisplay) => {
+const BudgetDisplay = (props: BudgetDisplayProps) => {
     return (
         <div>
             <BudgetView value={props.budget} />
@@ -20,10 +20,10 @@ const BudgetDisplay = (props: BudgetDisplay) => {
                 percentage=''
             />
             <BudgetPanel
-                category='expenses'
-                value={props.totalExpenses}
+                category='expense'
+                value={props.totalExpense}
                 percentage={calcPercentage(
-                    props.totalExpenses,
+                    props.totalExpense,
                     props.totalIncome
                 )}
             />

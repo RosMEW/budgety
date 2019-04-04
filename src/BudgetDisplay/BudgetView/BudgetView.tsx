@@ -3,12 +3,12 @@ import React from 'react';
 import { formatNumber } from '../../shared/helpers';
 import './BudgetView.scss';
 
-type BudgetView = {
+type BudgetViewProps = {
     value: number;
 };
 
-const BudgetView = (props: BudgetView) => {
-    const category = props.value >= 0 ? 'income' : 'expenses';
+const BudgetView = (props: BudgetViewProps) => {
+    const category = props.value >= 0 ? 'income' : 'expense';
 
     const date = new Date();
     const month = date.getMonth();

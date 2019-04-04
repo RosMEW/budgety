@@ -1,5 +1,9 @@
 export const calcPercentage = (value: number, total: number) => {
-    return `${Math.round((value / total) * 100)} %`;
+    if (total > 0) {
+        return `${Math.round((value / total) * 100)} %`;
+    } else {
+        return '0 %';
+    }
 };
 
 export const formatNumber = (value: number, category: string) => {
