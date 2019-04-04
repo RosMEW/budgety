@@ -1,4 +1,5 @@
 @import './style/color.scss';
+@import './style/mixins.scss';
 
 .top {
     height: 40vh;
@@ -7,15 +8,11 @@
     background-size: cover;
     background-position: center;
     color: white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flexColumn();
 }
 
 .form {
-    height: 5vh; // delete later
-    // padding: 1.4rem;
+    padding: 1.4rem;
     border-bottom: 1px solid $color-grey-border;
     background-color: $color-grey-background;
 }

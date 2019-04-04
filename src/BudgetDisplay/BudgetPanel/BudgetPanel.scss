@@ -1,23 +1,19 @@
 @import '../../style/color.scss';
+@import '../../style/mixins.scss';
 
 .BudgetPanel {
     width: 35rem;
     padding: 1.2rem;
     text-transform: uppercase;
     font-size: 1.3rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexRow(space-between);
 
     &__category {
         color: $color-grey-font-dark;
     }
 
     &__right {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexRow(space-between);
 
         &--value {
             letter-spacing: 1px;
@@ -36,7 +32,7 @@
     margin-bottom: 1rem;
 }
 
-.Panel__expenses {
+.Panel__expense {
     background-color: $color-red-expenses;
 }
 
