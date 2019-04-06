@@ -32,6 +32,10 @@
 
     &__value {
         width: 10rem;
+
+        @media only screen and (max-width: 600px) {
+            width: 7rem;
+        }
     }
 
     &__button {
@@ -42,6 +46,10 @@
         color: $color-blue-income;
         cursor: pointer;
         margin-left: 1rem;
+
+        @media only screen and (max-width: 600px) {
+            margin-left: 0.5rem;
+        }
     }
 
     &__button:active {
@@ -64,8 +72,8 @@
     font-size: 3rem;
 }
 
-.InputNumber[type=number]::-webkit-inner-spin-button,
-.InputNumber[type=number]::-webkit-outer-spin-button {
+.InputNumber[type='number']::-webkit-inner-spin-button,
+.InputNumber[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }

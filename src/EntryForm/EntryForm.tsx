@@ -32,6 +32,7 @@ const EntryForm = (props: EntryFormProps) => {
                 props.addEntry(category, description, value);
                 event.preventDefault();
                 (event.target as HTMLFormElement).reset();
+                setCategory('income');
             }}>
             <select
                 className='EntryForm__category EntryForm__input'
@@ -52,6 +53,7 @@ const EntryForm = (props: EntryFormProps) => {
                 className='EntryForm__value EntryForm__input InputNumber'
                 placeholder='Value'
                 onChange={onValueChange}
+                step='0.01'
                 required
             />
             <button className='EntryForm__button'>

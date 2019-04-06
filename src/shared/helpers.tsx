@@ -17,3 +17,39 @@ export const formatNumber = (value: number, category: string) => {
 
     return sign + ' ' + int + '.' + dec;
 };
+
+export const generateIncomes = () => [
+    {
+        id: '0',
+        category: 'income',
+        description: 'Salary',
+        value: 1508.23
+    },
+    {
+        id: '1',
+        category: 'income',
+        description: 'Bank Interest',
+        value: 32.58
+    }
+];
+
+export const generateExpenses = () => [
+    {
+        id: '2',
+        category: 'expense',
+        description: 'Groceries',
+        value: 233.16
+    },
+    {
+        id: '3',
+        category: 'expense',
+        description: 'Phone bill',
+        value: 58.17
+    },
+    {
+        id: '4',
+        category: 'expense',
+        description: 'Electricity bill',
+        value: 78.65
+    }
+];

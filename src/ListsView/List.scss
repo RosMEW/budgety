@@ -1,0 +1,55 @@
+@import '../style/color.scss';
+
+.List {
+    width: 47.5rem;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        width: 45%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 90%;
+    }
+}
+
+.income {
+    margin-right: 5rem;
+    color: $color-blue-income;
+
+    &__percentage {
+        background-color: lighten($color-blue-income, 45);
+    }
+
+    @media only screen and (max-width: 1200px) {
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+        padding-top: 2rem;
+        margin-right: 0;
+        margin-bottom: 5rem;
+    }
+}
+
+.expense {
+    color: $color-red-expense;
+
+    @media only screen and (max-width: 600px) {
+        padding-bottom: 2rem;
+    }
+
+    &__percentage {
+        background-color: lighten($color-red-expense, 28);
+    }
+}
+
+.button--delete {
+    font-size: 2.2rem;
+}

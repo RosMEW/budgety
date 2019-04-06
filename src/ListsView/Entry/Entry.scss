@@ -1,0 +1,74 @@
+@import '../../style/mixins.scss';
+@import '../../style/color.scss';
+
+.Entry {
+    @include flexRow(space-between);
+    padding: 1.3rem;
+    border-bottom: 1px solid $color-grey-border;
+    font-size: 1.5rem;
+
+    &__description {
+        color: $color-grey-font;
+        font-size: 1.6rem;
+        text-transform: capitalize;
+    }
+
+    &__right {
+        @include flexRow();
+    }
+
+    &__value,
+    &__percentage {
+        transition: transform 0.3s;
+    }
+
+    &__percentage {
+        margin-left: 2rem;
+        font-size: 1.1rem;
+        padding: 3px;
+        border-radius: 3px;
+        width: 3.8rem;
+        text-align: center;
+    }
+
+    &__button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none;
+        line-height: 1;
+
+        &--income {
+            color: $color-blue-income;
+        }
+
+        &--expense {
+            color: $color-red-expense;
+        }
+    }
+
+    &__button:focus {
+        outline: none;
+    }
+
+    &__button:active {
+        transform: translateY(2px);
+    }
+}
+
+.Entry:hover .Entry__value,
+.Entry:hover .Entry__percentage {
+    transform: translateX(-2rem);
+}
+
+.Entry:hover .Entry__button {
+    display: block;
+}
+
+.Entry:first-child {
+    border-top: 1px solid $color-grey-border;
+}
+
+.Entry:nth-child(even) {
+    background-color: $color-grey-background;
+}
