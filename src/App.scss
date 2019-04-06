@@ -8,11 +8,38 @@
     background-size: cover;
     background-position: center;
     color: white;
+
     @include flexColumn();
+
+    @media only screen and (max-width: 600px) {
+        height: 39vh;
+    }
 }
 
 .form {
     padding: 1.4rem;
     border-bottom: 1px solid $color-grey-border;
     background-color: $color-grey-background;
+
+    @media only screen and (max-width: 600px) {
+        height: 11vh;
+    }
+}
+
+.ListsView {
+    @include flexRow(center, flex-start);
+    width: 100rem;
+    margin: 6rem auto;
+
+    @media only screen and (max-width: 1100px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        @include flexColumn(center, flex-start);
+        margin: 0 auto;
+
+        height: 50vh;
+        overflow-y: scroll;
+    }
 }

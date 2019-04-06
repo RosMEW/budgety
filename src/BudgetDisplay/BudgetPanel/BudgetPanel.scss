@@ -8,6 +8,11 @@
     font-size: 1.3rem;
     @include flexRow(space-between);
 
+    @media only screen and (max-width: 600px) {
+        width: 60vw;
+
+    }
+
     &__category {
         color: $color-grey-font-dark;
     }
@@ -33,7 +38,7 @@
 }
 
 .Panel__expense {
-    background-color: $color-red-expenses;
+    background-color: $color-red-expense;
 }
 
 .transparentPanel {
