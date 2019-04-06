@@ -14,7 +14,7 @@ type ListProps = {
 const List = (props: ListProps) => {
     const entriesJSX = props.entries.map(entry => (
         <Entry
-            category={entry.category}
+            category={props.category}
             key={entry.id}
             description={entry.description}
             value={entry.value}

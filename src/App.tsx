@@ -39,7 +39,6 @@ const App = () => {
     const addEntry = (category: string, description: string, value: number) => {
         const newEntry = {
             id: `${Date.now()}`,
-            category: category,
             description: description,
             value: value
         };
