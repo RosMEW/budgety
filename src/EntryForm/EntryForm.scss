@@ -1,0 +1,79 @@
+@import '../style/color.scss';
+@import '../style/mixins.scss';
+
+.EntryForm {
+    @include flexRow();
+
+    &__input {
+        border: 1px solid $color-grey-border;
+        color: inherit;
+        font-family: inherit;
+        height: 4.4rem;
+        margin-right: 1rem;
+        border-radius: 5px;
+        transition: border 0.3s;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__category {
+        width: 5.5rem;
+        font-size: 1.8rem;
+    }
+
+    &__description,
+    &__value {
+        font-size: 1.4rem;
+    }
+
+    &__description {
+        width: 40rem;
+    }
+
+    &__value {
+        width: 10rem;
+
+        @media only screen and (max-width: 600px) {
+            width: 7rem;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        font-size: 4rem;
+        background: none;
+        border: none;
+        color: $color-blue-income;
+        cursor: pointer;
+        margin-left: 1rem;
+
+        @media only screen and (max-width: 600px) {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__button:active {
+        transform: translateY(2px);
+    }
+
+    &__button:focus {
+        outline: none;
+    }
+
+    &__category:focus,
+    &__description:focus,
+    &__value:focus {
+        outline: none;
+        border: 1px solid $color-blue-income;
+    }
+}
+
+.material-icons {
+    font-size: 3rem;
+}
+
+.InputNumber[type='number']::-webkit-inner-spin-button,
+.InputNumber[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

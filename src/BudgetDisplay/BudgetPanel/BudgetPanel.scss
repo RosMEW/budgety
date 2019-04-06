@@ -1,0 +1,49 @@
+@import '../../style/color.scss';
+@import '../../style/mixins.scss';
+
+.BudgetPanel {
+    width: 35rem;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    @include flexRow(space-between);
+
+    @media only screen and (max-width: 600px) {
+        width: 60vw;
+
+    }
+
+    &__category {
+        color: $color-grey-font-dark;
+    }
+
+    &__right {
+        @include flexRow(space-between);
+
+        &--value {
+            letter-spacing: 1px;
+        }
+
+        &--percentage {
+            width: 3.4rem;
+            padding: 3px 0;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.Panel__income {
+    background-color: $color-blue-income;
+    margin-bottom: 1rem;
+}
+
+.Panel__expense {
+    background-color: $color-red-expense;
+}
+
+.transparentPanel {
+    background-color: $color-transparent-text;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 3px;
+}
