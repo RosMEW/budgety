@@ -1,32 +1,34 @@
 import React from 'react';
 
-import Entry from './Entry/Entry';
-import { IEntry } from './Entry/Entry.model';
+import EntryItem from './Entry/Entry';
+import { Entry } from './Entry/Entry.model';
 import './List.scss';
 
 type ListProps = {
     category: string;
-    entries: IEntry[];
+    entries: Entry[];
     total: number;
     onDelete: (id: string) => void;
 };
 
 const List = (props: ListProps) => {
-    const entriesJSX = props.entries.map(entry => (
-        <Entry
-            category={props.category}
-            key={entry.id}
-            description={entry.description}
-            value={entry.value}
-            total={props.total}
-            delete={() => props.onDelete(entry.id)}
-        />
-    ));
+    const { category, entries, total, onDelete } = props;
 
     return (
-        <div className={`List ${props.category}`}>
-            <h2 className='List__title'>{props.category}</h2>
-            <div className='List__entries'>{entriesJSX}</div>
+        <div className={`List ${category}`}>
+            <h2 className='List__title'>{category}</h2>
+            <div className='List__entries'>
+                {entries.map(entry => (
+                    <EntryItem
+                        category={category}
+                        key={entry.id}
+                        description={entry.description}
+                        value={entry.value}
+                        total={total}
+                        delete={() => onDelete(entry.id)}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

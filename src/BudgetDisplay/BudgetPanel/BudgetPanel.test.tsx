@@ -16,11 +16,7 @@ const setup = (category: string = 'income') => {
 };
 
 describe('<BudgetPanel />', () => {
-    it('should render without crashing', () => {
-        setup();
-    });
-
-    it('should have Panel__expense class', () => {
+    it('should have Panel__income class', () => {
         const { wrapper } = setup();
         const panels = wrapper.container.getElementsByClassName(
             'Panel__income'
@@ -36,7 +32,7 @@ describe('<BudgetPanel />', () => {
         expect(panels.length).toEqual(1);
     });
 
-    it('should not have percentage', () => {
+    it('should not display percentage for income', () => {
         const { wrapper } = setup();
         const percentagePanel = wrapper.container.getElementsByClassName(
             'BudgetPanel__right--percentage'
@@ -44,7 +40,7 @@ describe('<BudgetPanel />', () => {
         expect(percentagePanel.innerHTML).toEqual('');
     });
 
-    it('should have percentage', () => {
+    it('should display percentage for expense', () => {
         const { wrapper, props } = setup('expense');
         const percentagePanel = wrapper.container.getElementsByClassName(
             'BudgetPanel__right--percentage'
