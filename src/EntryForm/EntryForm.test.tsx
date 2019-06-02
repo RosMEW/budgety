@@ -10,30 +10,27 @@ const setup = () => {
     cleanup();
     const wrapper = render(<EntryForm {...props} />);
 
-    return { wrapper, props };
+    return {
+        wrapper,
+        props,
+        descriptionInput: wrapper.container.getElementsByClassName(
+            'EntryForm__description'
+        )[0],
+        valueInput: wrapper.container.getElementsByClassName(
+            'EntryForm__value'
+        )[0],
+        submitButton: wrapper.container.getElementsByClassName(
+            'EntryForm__button'
+        )[0]
+    };
 };
 
 describe('<EntryForm />', () => {
     it('should add entry', () => {
-        const { wrapper, props } = setup();
-
-        // Fill description input
-        const descriptionInput = wrapper.container.getElementsByClassName(
-            'EntryForm__description'
-        )[0];
+        const { props, descriptionInput, valueInput, submitButton } = setup();
         fireEvent.change(descriptionInput, { target: { value: 'Salary' } });
-
-        // Fill value input
-        const valueInput = wrapper.container.getElementsByClassName(
-            'EntryForm__value'
-        )[0];
         fireEvent.change(valueInput, { target: { value: 2000 } });
-
-        // Click on add button
-        const addButton = wrapper.container.getElementsByClassName(
-            'EntryForm__button'
-        )[0];
-        fireEvent.click(addButton);
+        fireEvent.click(submitButton);
 
         expect(props.addEntry).toHaveBeenCalledTimes(1);
         expect(props.addEntry).toHaveBeenCalledWith('income', 'Salary', 2000);

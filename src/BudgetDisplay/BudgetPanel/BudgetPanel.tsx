@@ -10,10 +10,10 @@ type BudgetPanelProps = {
 };
 
 const BudgetPanel = (props: BudgetPanelProps) => {
-    const panelClasses: string[] = ['BudgetPanel'];
-    panelClasses.push(
+    const panelClasses: string[] = [
+        'BudgetPanel',
         props.category === 'income' ? 'Panel__income' : 'Panel__expense'
-    );
+    ];
 
     return (
         <div className={panelClasses.join(' ')}>
