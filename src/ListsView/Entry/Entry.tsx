@@ -12,7 +12,7 @@ type EntryProps = {
     delete: () => void;
 };
 
-const Entry = (props: EntryProps) => {
+const EntryItem = (props: EntryProps) => {
     return (
         <div className='Entry'>
             <div className='Entry__description'>{props.description}</div>
@@ -41,4 +41,4 @@ const Entry = (props: EntryProps) => {
     );
 };
 
-export default Entry;
+export default EntryItem;

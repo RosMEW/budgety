@@ -3,36 +3,27 @@ import React, { useState, useEffect } from 'react';
 import BudgetDisplay from './BudgetDisplay/BudgetDisplay';
 import EntryForm from './EntryForm/EntryForm';
 import List from './ListsView/List';
-import { IEntry } from './ListsView/Entry/Entry.model';
-import './App.scss';
 import { generateIncomes, generateExpenses } from './shared/helpers';
+import './App.scss';
 
 const App = () => {
     const [budget, setBudget] = useState(0);
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
-    const [incomesList, setIncomesList] = useState([] as IEntry[]);
-    const [expensesList, setExpensesList] = useState([] as IEntry[]);
-
-    useEffect(() => {
-        setIncomesList(generateIncomes());
-        setExpensesList(generateExpenses());
-    }, []);
+    const [incomesList, setIncomesList] = useState(generateIncomes());
+    const [expensesList, setExpensesList] = useState(generateExpenses());
 
     useEffect(() => {
         setBudget(totalIncome - totalExpense);
     }, [totalIncome, totalExpense]);
 
     useEffect(() => {
-        let total = incomesList.reduce((acc, income) => acc + income.value, 0);
+        let total = incomesList.reduce((acc, inc) => acc + inc.value, 0);
         setTotalIncome(total);
     }, [incomesList]);
 
     useEffect(() => {
-        let total = expensesList.reduce(
-            (acc, expense) => acc + expense.value,
-            0
-        );
+        let total = expensesList.reduce((acc, exp) => acc + exp.value, 0);
         setTotalExpense(total);
     }, [expensesList]);
 

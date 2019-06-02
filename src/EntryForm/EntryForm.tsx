@@ -53,7 +53,7 @@ const EntryForm = (props: EntryFormProps) => {
                 className='EntryForm__value EntryForm__input InputNumber'
                 placeholder='Value'
                 onChange={onValueChange}
-                step='0.01'
+                step='0.05'
                 required
             />
             <button className='EntryForm__button'>
